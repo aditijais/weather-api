@@ -1,17 +1,17 @@
 .cf--logo{
   padding: 30px;
   max-height: fit-content;
-  width: 500px;
+  width: 200px;
 }
-.cf--nav{
-  padding-top: 20px;
-  padding-bottom: 20px;
+.nav--head{
+  display:flex;
+  border:solid red;
 }
-.cf--head{
-  padding:30px;
-}
-.cf--heading{
-  color:aqua;
+.weather--temp{
+  color:grey;
+  margin-top: 8%;
+  margin-left: 30%;
+  font-size: 56px;
 }
 .nav--search{
   width:100%;
@@ -36,4 +36,7 @@ input{
 }
 .users{
   display: flex;
+}
+.feels--like{
+  
 }
