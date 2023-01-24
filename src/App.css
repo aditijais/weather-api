@@ -5,7 +5,6 @@
 }
 .nav--head{
   display:flex;
-  border:solid red;
 }
 .weather--temp{
   color:grey;
@@ -37,6 +36,8 @@ input{
 .users{
   display: flex;
 }
-.feels--like{
-  
+
+.body{
+  background-repeat: no-repeat;
+  height: 100vh;
 }
