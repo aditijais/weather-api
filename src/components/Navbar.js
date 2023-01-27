@@ -19,14 +19,14 @@ function Navbar() {
       axios.get(`https://api.weatherapi.com/v1/current.json?key=970b42fd54bd40d69e7120153231101&q=${location}&aqi=no`)
       
       .then(data => data.data)
-      .then(data=>setWeather(data.current))
-      console.log(weather)
-
-      if(weather?.temp<25){
-        setImage("images/snowfall.jpg");
-        console.log(image);
+      .then((data) =>{
+        setWeather(data.current);
+        console.log(weather);
+        if(weather?.temp_c<25){
+          setImage("images/snow.jpeg");
+          console.log(image);
        }
-       else if(weather?.temp>30){
+       else if(weather?.temp_c>30){
         setImage("images/summer.jpg");
         console.log(image);
        }
@@ -34,7 +34,8 @@ function Navbar() {
         setImage("images/rainy.jpg");
         console.log(image);
        }
-   } 
+      });
+   }; 
    
    
    
