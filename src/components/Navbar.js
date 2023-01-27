@@ -8,6 +8,7 @@ function Navbar() {
   
   const [location,setLocation] = useState();
   const [weather,setWeather] = useState(null);
+  const [image,setImage]=useState("/images/summer.jpg");
   const inputEvent=(e)=>{
     setLocation(e.target.value);
   }
@@ -20,21 +21,23 @@ function Navbar() {
       .then(data => data.data)
       .then(data=>setWeather(data.current))
       console.log(weather)
+
+      if(weather?.temp<25){
+        setImage("images/snowfall.jpg");
+        console.log(image);
+       }
+       else if(weather?.temp>30){
+        setImage("images/summer.jpg");
+        console.log(image);
+       }
+       if(weather?.humidity>=90){
+        setImage("images/rainy.jpg");
+        console.log(image);
+       }
    } 
-   const [image,setImage]=useState("/images/summer.jpg");
    
-   if(weather?.temp<25){
-    setImage("images/snowfall.jpg");
-    console.log(image);
-   }
-   else if(weather?.temp>30){
-    setImage("images/summer.jpg");
-    console.log(image);
-   }
-   if(weather?.humidity>=90){
-    setImage("images/rainy.jpg");
-    console.log(image);
-   }
+   
+   
   
   //  let image="";
   //  if(weather?.temp<25){
