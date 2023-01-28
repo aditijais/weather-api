@@ -30,6 +30,10 @@ function Navbar() {
         setImage("images/summer.jpg");
         console.log(image);
        }
+       else if(weather?.temp_c>=25 && weather?.temp_c<=30){
+        setImage("images/spring.jpg");
+        console.log(image);
+       }
        if(weather?.humidity>=90){
         setImage("images/rainy.jpg");
         console.log(image);
@@ -40,16 +44,7 @@ function Navbar() {
    
    
   
-  //  let image="";
-  //  if(weather?.temp<25){
-  //   image=summer;
-  //  }
-  //  else if(weather?.temp>30){
-  //   image="images/summer.jpg";
-  //  }
-  //  if(weather?.humidity>=90){
-  //   image="images/rainy.jpg"
-  //  }
+  
     
     
 
@@ -78,8 +73,7 @@ function Navbar() {
       
     </div>
     
-      
-      
+
       <div className="feels--like">Feels like : {weather?.feelslike_c}</div>
       
     
