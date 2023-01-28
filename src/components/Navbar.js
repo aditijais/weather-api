@@ -21,22 +21,18 @@ function Navbar() {
       .then(data => data.data)
       .then((data) =>{
         setWeather(data.current);
-        console.log(weather);
-        if(weather?.temp_c<25){
+        console.log(data);
+        if(data.current?.temp_c<25){
           setImage("images/snow.jpeg");
-          console.log(image);
        }
-       else if(weather?.temp_c>30){
+       else if(data.current?.temp_c>30){
         setImage("images/summer.jpg");
-        console.log(image);
        }
-       else if(weather?.temp_c>=25 && weather?.temp_c<=30){
+       else if(data.current?.temp_c>=25 && data.current?.temp_c<=30){
         setImage("images/spring.jpg");
-        console.log(image);
        }
-       if(weather?.humidity>=90){
+       if(data.current?.humidity>=30){
         setImage("images/rainy.jpg");
-        console.log(image);
        }
       });
    }; 
@@ -60,7 +56,7 @@ function Navbar() {
     
     <div className="nav--head">
     <img src="/images/weather-logo.png" alt=" " className="cf--logo"/>
-    <h1 className="weather--temp">{weather?.temp_c} °C </h1>
+    {weather?.temp_c && <h1 className="weather--temp">{weather?.temp_c} °C </h1>}
 
       {weather?.last_updated}
     </div>
